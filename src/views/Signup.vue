@@ -9,6 +9,9 @@
       <div v-show="msg" class="alert alert-danger" role="alert">
         {{msg}}
       </div>
+      <div v-show="this.$store.state.err.id == 'signup'" class="alert alert-danger" role="alert">
+        {{this.$store.state.err.msg}}
+      </div>
       <!-- Default input name -->
       <label for="defaultFormSubscriptionNameEx" class="grey-text">First Name</label>
       <input type="text" v-model="fname" id="defaultFormSubscriptionNameEx" class="form-control" required/>
@@ -43,12 +46,11 @@
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
-
     <!-- <button>SignUp</button> -->
   </div>
 </template>
 
-  <script>
+<script>
 export default {
   name: "Signup",
   data() {
@@ -65,14 +67,19 @@ export default {
     signUp: function() {
       console.log(this.msg);
       if (this.pass !== this.comfirmPass) {
-        this.msg = "the passwords doesn't match";
+        this.msg = "The passwords don't match 🙅🏻‍♂️";
       } else {
         this.$store.dispatch('signup', {
-          firstName: this.lname,
+          firstName: this.fname,
           lastName: this.lname,
           email: this.email,
           pass: this.pass
         })
+        this.fname = ''
+        this.lname = ''
+        this.email = ''
+        this.pass = ''
+        this.comfirmPass = ''
       }
     },
   },

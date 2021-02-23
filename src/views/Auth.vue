@@ -1,7 +1,7 @@
 <template>
     <div class="container d-flex my-5">
-        <Login/>        
-        <Signup/>
+        <Login />        
+        <Signup />
     </div>
 </template>
 
@@ -9,18 +9,17 @@
 import Login from './Login'
 import Signup from './Signup'
 export default {
-name: 'Auth',
-components: {
-    Login,
-    Signup
-}
-
+    name: 'Auth',
+    components: {
+        Login,
+        Signup
+    }
 }
 </script>
 
 <style lang="scss" scoped>
 .container{
-    height: 80vh;
+    min-height: 80vh;
 }
 
 .login{

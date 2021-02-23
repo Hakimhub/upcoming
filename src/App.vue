@@ -4,21 +4,21 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </div> -->
-    <Nav/>
+    <NavBar/>
     <router-view/>
     <Footer />
-  </div>
+  </div> 
 </template>
 
 <script>
 // @ is an alias to /src
-import Nav from './components/Nav'
+import NavBar from './components/NavBar'
 import Footer from './components/Footer'
 
 export default {
   name: 'App',
   components: {
-    Nav,
+    NavBar,
     Footer
   }
 }

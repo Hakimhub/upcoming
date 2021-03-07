@@ -2,7 +2,6 @@
   <div class="login col-10 col-md-6 col-lg-5 d-flex flex-column justify-content-center p-4 my-4 mx-auto">
     <h2>Welcome Back!</h2>
     <p>please login with your personal info</p>
-    <!-- <button>LogIn</button> -->
     <form @submit.prevent="signIn">
       <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Email address</label>

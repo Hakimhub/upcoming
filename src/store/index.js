@@ -7,7 +7,9 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     isAuth: false,
+    connectedUser: '',
     users: [],
+    poems: [],
     err: null
   },
   mutations: {
@@ -29,10 +31,14 @@ export default new Vuex.Store({
       const cUser = state.users.filter(cuser => cuser.email == user.email)
       if(cUser[0].email && cUser[0].pass === user.pass){
         state.isAuth = true
+        state.connectedUser = cUser[0]
         // localStorage.setItem('isAuth', JSON.stringify(true))
       } else {
         state.err = {msg: "the password or the email isn't correct !", id: 'login'}
       }
+    },
+    addNewPoem: (state, poem) => {
+      state.poems = [...state.poems, poem]
     },
     signout: (state) => {
       state.isAuth = false
@@ -40,6 +46,9 @@ export default new Vuex.Store({
     }
   },
   actions: {
+    addNewPoem: (context, poem) => {
+      context.commit('addNewPoem', poem)
+    },
     signup: (context, user) => {
       context.commit('signup', user)
     },

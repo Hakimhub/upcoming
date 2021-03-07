@@ -6,6 +6,7 @@ import SignUp from '../views/SignUp'
 import Adhesion from '../views/Adhesion'
 import AProposDeNous from '../views/AProposDeNous'
 import PoemesEtBlogs from '../views/PoemesEtBlogs'
+import AddPoem from '../views/AddPoem'
 
 Vue.use(VueRouter)
 
@@ -47,6 +48,11 @@ const routes = [
     path: '/PoemesEtBlogs',
     name: 'PoemesEtBlogs',
     component: PoemesEtBlogs
+  },
+  {
+    path: '/AddPoem',
+    name: 'AddPoem',
+    component: AddPoem
   }
 ]
 

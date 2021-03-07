@@ -36,6 +36,7 @@ export default {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  background-color: rgb(240, 240, 240);
 }
 
 #nav {

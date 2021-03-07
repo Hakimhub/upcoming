@@ -1,11 +1,11 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
-import Auth from '../views/Auth'
+import Login from '../views/Login'
+import SignUp from '../views/SignUp'
 import Adhesion from '../views/Adhesion'
 import AProposDeNous from '../views/AProposDeNous'
 import PoemesEtBlogs from '../views/PoemesEtBlogs'
-
 
 Vue.use(VueRouter)
 
@@ -25,8 +25,13 @@ const routes = [
   },
   {
     path: '/auth',
-    name: 'Auth',
-    component: Auth
+    name: 'Login',
+    component: Login
+  },
+  {
+    path: '/signup',
+    name: 'SignUp',
+    component: SignUp
   },
   {
     path: '/adhesion',

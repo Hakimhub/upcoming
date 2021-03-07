@@ -8,31 +8,40 @@
           <div class="menu-item"><router-link to='/'>Home</router-link></div>
           <div class="menu-item"><router-link to='/adhesion'>Adhésion</router-link></div>
           <div class="menu-item"><router-link to='/PoemesEtBlogs'>Poèmes et blogs</router-link></div>
-          <div class="menu-item"><router-link to='/AProposDeNous'>A propos de nous</router-link></div>        
+          <div class="menu-item"><router-link to='/AProposDeNous'>A propos de nous</router-link></div> 
+          <div class="menu-item" v-on:click='signOut'><router-link to='/'>Sign out</router-link></div>
       </nav>
     </div>
     <div v-show="!this.$store.state.isAuth">
       <nav>
           <div class="menu-item"><router-link to='/'>Home</router-link></div>
           <div class="menu-item"><router-link to='/auth'>LogIn</router-link></div>
+          <div class="menu-item" ><router-link to='/signup'>Sign up</router-link></div>
       </nav>
     </div>
+    <!-- <div v-show="!this.$store.state.isAuth">
+      <nav>
+          <div class="menu-item"><router-link to='/'>Home</router-link></div>
+          <div class="menu-item"><router-link to='/auth'>LogIn</router-link></div>
+          <div class="menu-item"><router-link to='/signup'>Sign up</router-link></div>
+      </nav>
+    </div> -->
     
-    <b-navbar-nav class="ml-auto">
+    <!-- <b-navbar-nav class="ml-auto">
       <b-nav-item-dropdown text="Lang" right>
         <b-dropdown-item href="#">EN</b-dropdown-item>
         <b-dropdown-item href="#">FR</b-dropdown-item>
       </b-nav-item-dropdown>
 
-      <b-nav-item-dropdown right>
+      <b-nav-item-dropdown right> -->
         <!-- Using 'button-content' slot -->
-        <template #button-content>
+        <!-- <template #button-content>
           <em>User</em>
         </template>
         <b-dropdown-item href="#">Profile</b-dropdown-item>
         <b-dropdown-item v-on:click='signOut' href="#">Sign Out</b-dropdown-item>
       </b-nav-item-dropdown>
-    </b-navbar-nav>
+    </b-navbar-nav> -->
       <!-- </b-collapse> -->
       </b-navbar>
   </div>
@@ -43,7 +52,7 @@ export default {
   methods: {
   signOut: function() {
     this.$store.dispatch('signout')
-    console.log('dfgdfg');
+    this.$router.push('/');
     }
   }
 }

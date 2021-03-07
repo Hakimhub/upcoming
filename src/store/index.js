@@ -1,12 +1,13 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
+import VuexPersistence from 'vuex-persist'
 
 Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    isAuth: JSON.parse(localStorage.getItem('isAuth')) || false,
-    users: JSON.parse(localStorage.getItem('users')) || [],
+    isAuth: false,
+    users: [],
     err: null
   },
   mutations: {
@@ -20,24 +21,22 @@ export default new Vuex.Store({
       } else {
         allusers.push(user)
         state.users = allusers
-        localStorage.setItem('users', JSON.stringify(allusers))
+        // localStorage.setItem('users', JSON.stringify(allusers))
       }
     },
     signin: (state, user) => {
+      console.log(state);
       const cUser = state.users.filter(cuser => cuser.email == user.email)
-      console.log(JSON.parse(localStorage.getItem('users')))
-      console.log(JSON.parse(localStorage.getItem('isAuth')))
-      console.log(user.pass)
       if(cUser[0].email && cUser[0].pass === user.pass){
         state.isAuth = true
-        localStorage.setItem('isAuth', JSON.stringify(true))
+        // localStorage.setItem('isAuth', JSON.stringify(true))
       } else {
         state.err = {msg: "the password or the email isn't correct !", id: 'login'}
       }
     },
     signout: (state) => {
       state.isAuth = false
-      localStorage.removeItem('isAuth')
+      // localStorage.removeItem('isAuth')
     }
   },
   actions: {
@@ -49,7 +48,7 @@ export default new Vuex.Store({
     },
     signout: (context) => {
       context.commit('signout')
-      console.log('done')
     }
-  }
+  },
+  plugins: [new VuexPersistence().plugin]
 })

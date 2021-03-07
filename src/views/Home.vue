@@ -3,6 +3,27 @@
 
   <h2>Nous sommes heureux de vous voir,<br>Continuez avec la littérature, cela nous fait avancer dans la vie</h2>
 
+  <div>
+   <b><h3>HAÏKUS</h3></b> 
+    <h4>
+      <br>La lune à minuit
+         comme
+        un bloc de fraîcheur!<br>
+
+      <br>La lampe éteinte 
+        Les étoiles fraîches
+        se glissent par la fenêtre.<br>
+
+      <br>Je m’assoupis
+        un nuage de canicule
+        sur les genoux.<br>
+
+      <br>Dans le ciel
+        le coucou et l’alouette
+        chantent en croix.<br> 
+    </h4>
+  </div>
+
   </div>
  
 </template>
